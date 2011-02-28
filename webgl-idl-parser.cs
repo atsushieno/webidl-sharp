@@ -50,13 +50,13 @@ namespace WebIDLSharp
 				//	Console.WriteLine ("[enum] {0}: {1}", p.Value, p.Key);
 				Console.WriteLine ("<signatures>");
 				Console.WriteLine ("  <add>");
-				foreach (var p in enums) {
+				foreach (var p in from e in enums orderby e.Key select e) {
 					Console.WriteLine ("    <enum name='{0}' type='int'>", p.Key);
 					foreach (var t in p.Value)
 						Console.WriteLine ("      <token name='{0}' value='{1}' />", t.Key, t.Value);
 					Console.WriteLine ("    </enum>");
 				}
-				foreach (var f in functions)
+				foreach (var f in from x in functions orderby x.Name select x)
 					Console.WriteLine (f);
 				Console.WriteLine ("  </add>");
 				Console.WriteLine ("</signatures>");
