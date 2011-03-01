@@ -52,8 +52,8 @@ namespace WebIDLSharp
 				Console.WriteLine ("<signatures>");
 				Console.WriteLine ("  <add>");
 				foreach (var p in from e in enums orderby e.Key select e) {
-					Console.WriteLine ("    <enum name='{0}' type='int'>".Replace ('\'', '"'), p.Key);
-					foreach (var t in p.Value)
+					Console.WriteLine ("    <enum name='{0}' type='int'>".Replace ('\'', '"'), CodeIdentifier.MakePascal (p.Key));
+					foreach (var t in from x in p.Value orderby x.Key select x)
 						Console.WriteLine ("      <token name='{0}' value='{1}' />".Replace ('\'', '"'), t.Key, t.Value);
 					Console.WriteLine ("    </enum>");
 				}

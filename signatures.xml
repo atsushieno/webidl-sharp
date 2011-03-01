@@ -1,23 +1,23 @@
 ﻿<signatures>
   <add>
-    <enum name="AlphaFunction (not supported in ES20)" type="int">
-      <token name="ZERO" value="0" />
+    <enum name="AlphaFunctionnotsupportedinES20" type="int">
+      <token name="DST_ALPHA" value="0x0304" />
       <token name="ONE" value="1" />
-      <token name="SRC_COLOR" value="0x0300" />
+      <token name="ONE_MINUS_DST_ALPHA" value="0x0305" />
+      <token name="ONE_MINUS_SRC_ALPHA" value="0x0303" />
       <token name="ONE_MINUS_SRC_COLOR" value="0x0301" />
       <token name="SRC_ALPHA" value="0x0302" />
-      <token name="ONE_MINUS_SRC_ALPHA" value="0x0303" />
-      <token name="DST_ALPHA" value="0x0304" />
-      <token name="ONE_MINUS_DST_ALPHA" value="0x0305" />
+      <token name="SRC_COLOR" value="0x0300" />
+      <token name="ZERO" value="0" />
     </enum>
     <enum name="BeginMode" type="int">
-      <token name="POINTS" value="0x0000" />
-      <token name="LINES" value="0x0001" />
       <token name="LINE_LOOP" value="0x0002" />
       <token name="LINE_STRIP" value="0x0003" />
-      <token name="TRIANGLES" value="0x0004" />
-      <token name="TRIANGLE_STRIP" value="0x0005" />
+      <token name="LINES" value="0x0001" />
+      <token name="POINTS" value="0x0000" />
       <token name="TRIANGLE_FAN" value="0x0006" />
+      <token name="TRIANGLE_STRIP" value="0x0005" />
+      <token name="TRIANGLES" value="0x0004" />
     </enum>
     <enum name="BlendingFactorSrc" type="int">
       <token name="DST_COLOR" value="0x0306" />
@@ -25,132 +25,132 @@
       <token name="SRC_ALPHA_SATURATE" value="0x0308" />
     </enum>
     <enum name="BlendSubtract" type="int">
-      <token name="FUNC_SUBTRACT" value="0x800A" />
       <token name="FUNC_REVERSE_SUBTRACT" value="0x800B" />
+      <token name="FUNC_SUBTRACT" value="0x800A" />
     </enum>
-    <enum name="Buffer Objects" type="int">
+    <enum name="BufferObjects" type="int">
       <token name="ARRAY_BUFFER" value="0x8892" />
-      <token name="ELEMENT_ARRAY_BUFFER" value="0x8893" />
       <token name="ARRAY_BUFFER_BINDING" value="0x8894" />
-      <token name="ELEMENT_ARRAY_BUFFER_BINDING" value="0x8895" />
-      <token name="STREAM_DRAW" value="0x88E0" />
-      <token name="STATIC_DRAW" value="0x88E4" />
-      <token name="DYNAMIC_DRAW" value="0x88E8" />
       <token name="BUFFER_SIZE" value="0x8764" />
       <token name="BUFFER_USAGE" value="0x8765" />
       <token name="CURRENT_VERTEX_ATTRIB" value="0x8626" />
+      <token name="DYNAMIC_DRAW" value="0x88E8" />
+      <token name="ELEMENT_ARRAY_BUFFER" value="0x8893" />
+      <token name="ELEMENT_ARRAY_BUFFER_BINDING" value="0x8895" />
+      <token name="STATIC_DRAW" value="0x88E4" />
+      <token name="STREAM_DRAW" value="0x88E0" />
     </enum>
     <enum name="ClearBufferMask" type="int">
+      <token name="COLOR_BUFFER_BIT" value="0x00004000" />
       <token name="DEPTH_BUFFER_BIT" value="0x00000100" />
       <token name="STENCIL_BUFFER_BIT" value="0x00000400" />
-      <token name="COLOR_BUFFER_BIT" value="0x00004000" />
     </enum>
     <enum name="CullFaceMode" type="int">
-      <token name="FRONT" value="0x0404" />
       <token name="BACK" value="0x0405" />
+      <token name="FRONT" value="0x0404" />
       <token name="FRONT_AND_BACK" value="0x0408" />
     </enum>
     <enum name="DataType" type="int">
       <token name="BYTE" value="0x1400" />
-      <token name="UNSIGNED_BYTE" value="0x1401" />
-      <token name="SHORT" value="0x1402" />
-      <token name="UNSIGNED_SHORT" value="0x1403" />
-      <token name="INT" value="0x1404" />
-      <token name="UNSIGNED_INT" value="0x1405" />
       <token name="FLOAT" value="0x1406" />
+      <token name="INT" value="0x1404" />
+      <token name="SHORT" value="0x1402" />
+      <token name="UNSIGNED_BYTE" value="0x1401" />
+      <token name="UNSIGNED_INT" value="0x1405" />
+      <token name="UNSIGNED_SHORT" value="0x1403" />
     </enum>
     <enum name="DepthFunction" type="int">
-      <token name="TEXTURE_2D" value="0x0DE1" />
-      <token name="CULL_FACE" value="0x0B44" />
       <token name="BLEND" value="0x0BE2" />
-      <token name="DITHER" value="0x0BD0" />
-      <token name="STENCIL_TEST" value="0x0B90" />
+      <token name="CULL_FACE" value="0x0B44" />
       <token name="DEPTH_TEST" value="0x0B71" />
-      <token name="SCISSOR_TEST" value="0x0C11" />
+      <token name="DITHER" value="0x0BD0" />
       <token name="POLYGON_OFFSET_FILL" value="0x8037" />
       <token name="SAMPLE_ALPHA_TO_COVERAGE" value="0x809E" />
       <token name="SAMPLE_COVERAGE" value="0x80A0" />
+      <token name="SCISSOR_TEST" value="0x0C11" />
+      <token name="STENCIL_TEST" value="0x0B90" />
+      <token name="TEXTURE_2D" value="0x0DE1" />
     </enum>
     <enum name="ErrorCode" type="int">
-      <token name="NO_ERROR" value="0" />
       <token name="INVALID_ENUM" value="0x0500" />
-      <token name="INVALID_VALUE" value="0x0501" />
       <token name="INVALID_OPERATION" value="0x0502" />
+      <token name="INVALID_VALUE" value="0x0501" />
+      <token name="NO_ERROR" value="0" />
       <token name="OUT_OF_MEMORY" value="0x0505" />
     </enum>
-    <enum name="Framebuffer Object." type="int">
-      <token name="FRAMEBUFFER" value="0x8D40" />
-      <token name="RENDERBUFFER" value="0x8D41" />
-      <token name="RGBA4" value="0x8056" />
-      <token name="RGB5_A1" value="0x8057" />
-      <token name="RGB565" value="0x8D62" />
+    <enum name="FramebufferObject" type="int">
+      <token name="COLOR_ATTACHMENT0" value="0x8CE0" />
+      <token name="DEPTH_ATTACHMENT" value="0x8D00" />
       <token name="DEPTH_COMPONENT16" value="0x81A5" />
-      <token name="STENCIL_INDEX" value="0x1901" />
-      <token name="STENCIL_INDEX8" value="0x8D48" />
       <token name="DEPTH_STENCIL" value="0x84F9" />
-      <token name="RENDERBUFFER_WIDTH" value="0x8D42" />
+      <token name="DEPTH_STENCIL_ATTACHMENT" value="0x821A" />
+      <token name="FRAMEBUFFER" value="0x8D40" />
+      <token name="FRAMEBUFFER_ATTACHMENT_OBJECT_NAME" value="0x8CD1" />
+      <token name="FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE" value="0x8CD0" />
+      <token name="FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE" value="0x8CD3" />
+      <token name="FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL" value="0x8CD2" />
+      <token name="FRAMEBUFFER_BINDING" value="0x8CA6" />
+      <token name="FRAMEBUFFER_COMPLETE" value="0x8CD5" />
+      <token name="FRAMEBUFFER_INCOMPLETE_ATTACHMENT" value="0x8CD6" />
+      <token name="FRAMEBUFFER_INCOMPLETE_DIMENSIONS" value="0x8CD9" />
+      <token name="FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT" value="0x8CD7" />
+      <token name="FRAMEBUFFER_UNSUPPORTED" value="0x8CDD" />
+      <token name="INVALID_FRAMEBUFFER_OPERATION" value="0x0506" />
+      <token name="MAX_RENDERBUFFER_SIZE" value="0x84E8" />
+      <token name="NONE" value="0" />
+      <token name="RENDERBUFFER" value="0x8D41" />
+      <token name="RENDERBUFFER_ALPHA_SIZE" value="0x8D53" />
+      <token name="RENDERBUFFER_BINDING" value="0x8CA7" />
+      <token name="RENDERBUFFER_BLUE_SIZE" value="0x8D52" />
+      <token name="RENDERBUFFER_DEPTH_SIZE" value="0x8D54" />
+      <token name="RENDERBUFFER_GREEN_SIZE" value="0x8D51" />
       <token name="RENDERBUFFER_HEIGHT" value="0x8D43" />
       <token name="RENDERBUFFER_INTERNAL_FORMAT" value="0x8D44" />
       <token name="RENDERBUFFER_RED_SIZE" value="0x8D50" />
-      <token name="RENDERBUFFER_GREEN_SIZE" value="0x8D51" />
-      <token name="RENDERBUFFER_BLUE_SIZE" value="0x8D52" />
-      <token name="RENDERBUFFER_ALPHA_SIZE" value="0x8D53" />
-      <token name="RENDERBUFFER_DEPTH_SIZE" value="0x8D54" />
       <token name="RENDERBUFFER_STENCIL_SIZE" value="0x8D55" />
-      <token name="FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE" value="0x8CD0" />
-      <token name="FRAMEBUFFER_ATTACHMENT_OBJECT_NAME" value="0x8CD1" />
-      <token name="FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL" value="0x8CD2" />
-      <token name="FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE" value="0x8CD3" />
-      <token name="COLOR_ATTACHMENT0" value="0x8CE0" />
-      <token name="DEPTH_ATTACHMENT" value="0x8D00" />
+      <token name="RENDERBUFFER_WIDTH" value="0x8D42" />
+      <token name="RGB5_A1" value="0x8057" />
+      <token name="RGB565" value="0x8D62" />
+      <token name="RGBA4" value="0x8056" />
       <token name="STENCIL_ATTACHMENT" value="0x8D20" />
-      <token name="DEPTH_STENCIL_ATTACHMENT" value="0x821A" />
-      <token name="NONE" value="0" />
-      <token name="FRAMEBUFFER_COMPLETE" value="0x8CD5" />
-      <token name="FRAMEBUFFER_INCOMPLETE_ATTACHMENT" value="0x8CD6" />
-      <token name="FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT" value="0x8CD7" />
-      <token name="FRAMEBUFFER_INCOMPLETE_DIMENSIONS" value="0x8CD9" />
-      <token name="FRAMEBUFFER_UNSUPPORTED" value="0x8CDD" />
-      <token name="FRAMEBUFFER_BINDING" value="0x8CA6" />
-      <token name="RENDERBUFFER_BINDING" value="0x8CA7" />
-      <token name="MAX_RENDERBUFFER_SIZE" value="0x84E8" />
-      <token name="INVALID_FRAMEBUFFER_OPERATION" value="0x0506" />
+      <token name="STENCIL_INDEX" value="0x1901" />
+      <token name="STENCIL_INDEX8" value="0x8D48" />
     </enum>
     <enum name="FrontFaceDirection" type="int">
-      <token name="CW" value="0x0900" />
       <token name="CCW" value="0x0901" />
+      <token name="CW" value="0x0900" />
     </enum>
     <enum name="GetPName" type="int">
-      <token name="LINE_WIDTH" value="0x0B21" />
-      <token name="ALIASED_POINT_SIZE_RANGE" value="0x846D" />
       <token name="ALIASED_LINE_WIDTH_RANGE" value="0x846E" />
+      <token name="ALIASED_POINT_SIZE_RANGE" value="0x846D" />
       <token name="CULL_FACE_MODE" value="0x0B45" />
-      <token name="FRONT_FACE" value="0x0B46" />
-      <token name="DEPTH_RANGE" value="0x0B70" />
-      <token name="DEPTH_WRITEMASK" value="0x0B72" />
       <token name="DEPTH_CLEAR_VALUE" value="0x0B73" />
       <token name="DEPTH_FUNC" value="0x0B74" />
-      <token name="STENCIL_CLEAR_VALUE" value="0x0B91" />
-      <token name="STENCIL_FUNC" value="0x0B92" />
-      <token name="STENCIL_FAIL" value="0x0B94" />
-      <token name="STENCIL_PASS_DEPTH_FAIL" value="0x0B95" />
-      <token name="STENCIL_PASS_DEPTH_PASS" value="0x0B96" />
-      <token name="STENCIL_REF" value="0x0B97" />
-      <token name="STENCIL_VALUE_MASK" value="0x0B93" />
-      <token name="STENCIL_WRITEMASK" value="0x0B98" />
-      <token name="STENCIL_BACK_FUNC" value="0x8800" />
+      <token name="DEPTH_RANGE" value="0x0B70" />
+      <token name="DEPTH_WRITEMASK" value="0x0B72" />
+      <token name="FRONT_FACE" value="0x0B46" />
+      <token name="LINE_WIDTH" value="0x0B21" />
+      <token name="SCISSOR_BOX" value="0x0C10" />
       <token name="STENCIL_BACK_FAIL" value="0x8801" />
+      <token name="STENCIL_BACK_FUNC" value="0x8800" />
       <token name="STENCIL_BACK_PASS_DEPTH_FAIL" value="0x8802" />
       <token name="STENCIL_BACK_PASS_DEPTH_PASS" value="0x8803" />
       <token name="STENCIL_BACK_REF" value="0x8CA3" />
       <token name="STENCIL_BACK_VALUE_MASK" value="0x8CA4" />
       <token name="STENCIL_BACK_WRITEMASK" value="0x8CA5" />
+      <token name="STENCIL_CLEAR_VALUE" value="0x0B91" />
+      <token name="STENCIL_FAIL" value="0x0B94" />
+      <token name="STENCIL_FUNC" value="0x0B92" />
+      <token name="STENCIL_PASS_DEPTH_FAIL" value="0x0B95" />
+      <token name="STENCIL_PASS_DEPTH_PASS" value="0x0B96" />
+      <token name="STENCIL_REF" value="0x0B97" />
+      <token name="STENCIL_VALUE_MASK" value="0x0B93" />
+      <token name="STENCIL_WRITEMASK" value="0x0B98" />
       <token name="VIEWPORT" value="0x0BA2" />
-      <token name="SCISSOR_BOX" value="0x0C10" />
     </enum>
     <enum name="GetTextureParameter" type="int">
-      <token name="NUM_COMPRESSED_TEXTURE_FORMATS" value="0x86A2" />
       <token name="COMPRESSED_TEXTURE_FORMATS" value="0x86A3" />
+      <token name="NUM_COMPRESSED_TEXTURE_FORMATS" value="0x86A2" />
     </enum>
     <enum name="HintMode" type="int">
       <token name="DONT_CARE" value="0x1100" />
@@ -161,12 +161,12 @@
       <token name="GENERATE_MIPMAP_HINT" value="0x8192" />
     </enum>
     <enum name="PixelFormat" type="int">
-      <token name="DEPTH_COMPONENT" value="0x1902" />
       <token name="ALPHA" value="0x1906" />
-      <token name="RGB" value="0x1907" />
-      <token name="RGBA" value="0x1908" />
+      <token name="DEPTH_COMPONENT" value="0x1902" />
       <token name="LUMINANCE" value="0x1909" />
       <token name="LUMINANCE_ALPHA" value="0x190A" />
+      <token name="RGB" value="0x1907" />
+      <token name="RGBA" value="0x1908" />
     </enum>
     <enum name="PixelType" type="int">
       <token name="UNSIGNED_SHORT_4_4_4_4" value="0x8033" />
@@ -175,115 +175,115 @@
     </enum>
     <enum name="POLYGON_OFFSET_FILL" type="int">
       <token name="POLYGON_OFFSET_FACTOR" value="0x8038" />
-      <token name="TEXTURE_BINDING_2D" value="0x8069" />
       <token name="SAMPLE_BUFFERS" value="0x80A8" />
-      <token name="SAMPLES" value="0x80A9" />
-      <token name="SAMPLE_COVERAGE_VALUE" value="0x80AA" />
       <token name="SAMPLE_COVERAGE_INVERT" value="0x80AB" />
+      <token name="SAMPLE_COVERAGE_VALUE" value="0x80AA" />
+      <token name="SAMPLES" value="0x80A9" />
+      <token name="TEXTURE_BINDING_2D" value="0x8069" />
     </enum>
-    <enum name="same as BLEND_EQUATION" type="int">
+    <enum name="SameasBLEND_EQUATION" type="int">
       <token name="BLEND_EQUATION_ALPHA" value="0x883D" />
     </enum>
     <enum name="SCISSOR_TEST" type="int">
+      <token name="ALPHA_BITS" value="0x0D55" />
+      <token name="BLUE_BITS" value="0x0D54" />
       <token name="COLOR_CLEAR_VALUE" value="0x0C22" />
       <token name="COLOR_WRITEMASK" value="0x0C23" />
-      <token name="UNPACK_ALIGNMENT" value="0x0CF5" />
-      <token name="PACK_ALIGNMENT" value="0x0D05" />
+      <token name="DEPTH_BITS" value="0x0D56" />
+      <token name="GREEN_BITS" value="0x0D53" />
       <token name="MAX_TEXTURE_SIZE" value="0x0D33" />
       <token name="MAX_VIEWPORT_DIMS" value="0x0D3A" />
-      <token name="SUBPIXEL_BITS" value="0x0D50" />
-      <token name="RED_BITS" value="0x0D52" />
-      <token name="GREEN_BITS" value="0x0D53" />
-      <token name="BLUE_BITS" value="0x0D54" />
-      <token name="ALPHA_BITS" value="0x0D55" />
-      <token name="DEPTH_BITS" value="0x0D56" />
-      <token name="STENCIL_BITS" value="0x0D57" />
+      <token name="PACK_ALIGNMENT" value="0x0D05" />
       <token name="POLYGON_OFFSET_UNITS" value="0x2A00" />
+      <token name="RED_BITS" value="0x0D52" />
+      <token name="STENCIL_BITS" value="0x0D57" />
+      <token name="SUBPIXEL_BITS" value="0x0D50" />
+      <token name="UNPACK_ALIGNMENT" value="0x0CF5" />
     </enum>
-    <enum name="Separate Blend Functions" type="int">
-      <token name="BLEND_DST_RGB" value="0x80C8" />
-      <token name="BLEND_SRC_RGB" value="0x80C9" />
-      <token name="BLEND_DST_ALPHA" value="0x80CA" />
-      <token name="BLEND_SRC_ALPHA" value="0x80CB" />
-      <token name="CONSTANT_COLOR" value="0x8001" />
-      <token name="ONE_MINUS_CONSTANT_COLOR" value="0x8002" />
-      <token name="CONSTANT_ALPHA" value="0x8003" />
-      <token name="ONE_MINUS_CONSTANT_ALPHA" value="0x8004" />
+    <enum name="SeparateBlendFunctions" type="int">
       <token name="BLEND_COLOR" value="0x8005" />
+      <token name="BLEND_DST_ALPHA" value="0x80CA" />
+      <token name="BLEND_DST_RGB" value="0x80C8" />
+      <token name="BLEND_SRC_ALPHA" value="0x80CB" />
+      <token name="BLEND_SRC_RGB" value="0x80C9" />
+      <token name="CONSTANT_ALPHA" value="0x8003" />
+      <token name="CONSTANT_COLOR" value="0x8001" />
+      <token name="ONE_MINUS_CONSTANT_ALPHA" value="0x8004" />
+      <token name="ONE_MINUS_CONSTANT_COLOR" value="0x8002" />
     </enum>
-    <enum name="Shader Precision-Specified Types" type="int">
-      <token name="LOW_FLOAT" value="0x8DF0" />
-      <token name="MEDIUM_FLOAT" value="0x8DF1" />
+    <enum name="ShaderPrecisionSpecifiedTypes" type="int">
       <token name="HIGH_FLOAT" value="0x8DF2" />
-      <token name="LOW_INT" value="0x8DF3" />
-      <token name="MEDIUM_INT" value="0x8DF4" />
       <token name="HIGH_INT" value="0x8DF5" />
+      <token name="LOW_FLOAT" value="0x8DF0" />
+      <token name="LOW_INT" value="0x8DF3" />
+      <token name="MEDIUM_FLOAT" value="0x8DF1" />
+      <token name="MEDIUM_INT" value="0x8DF4" />
     </enum>
-    <enum name="Shader Source" type="int">
+    <enum name="ShaderSource" type="int">
       <token name="COMPILE_STATUS" value="0x8B81" />
       <token name="INFO_LOG_LENGTH" value="0x8B84" />
       <token name="SHADER_SOURCE_LENGTH" value="0x8B88" />
     </enum>
     <enum name="Shaders" type="int">
-      <token name="FRAGMENT_SHADER" value="0x8B30" />
-      <token name="VERTEX_SHADER" value="0x8B31" />
-      <token name="MAX_VERTEX_ATTRIBS" value="0x8869" />
-      <token name="MAX_VERTEX_UNIFORM_VECTORS" value="0x8DFB" />
-      <token name="MAX_VARYING_VECTORS" value="0x8DFC" />
-      <token name="MAX_COMBINED_TEXTURE_IMAGE_UNITS" value="0x8B4D" />
-      <token name="MAX_VERTEX_TEXTURE_IMAGE_UNITS" value="0x8B4C" />
-      <token name="MAX_TEXTURE_IMAGE_UNITS" value="0x8872" />
-      <token name="MAX_FRAGMENT_UNIFORM_VECTORS" value="0x8DFD" />
-      <token name="SHADER_TYPE" value="0x8B4F" />
-      <token name="DELETE_STATUS" value="0x8B80" />
-      <token name="LINK_STATUS" value="0x8B82" />
-      <token name="VALIDATE_STATUS" value="0x8B83" />
-      <token name="ATTACHED_SHADERS" value="0x8B85" />
-      <token name="ACTIVE_UNIFORMS" value="0x8B86" />
-      <token name="ACTIVE_UNIFORM_MAX_LENGTH" value="0x8B87" />
-      <token name="ACTIVE_ATTRIBUTES" value="0x8B89" />
       <token name="ACTIVE_ATTRIBUTE_MAX_LENGTH" value="0x8B8A" />
-      <token name="SHADING_LANGUAGE_VERSION" value="0x8B8C" />
+      <token name="ACTIVE_ATTRIBUTES" value="0x8B89" />
+      <token name="ACTIVE_UNIFORM_MAX_LENGTH" value="0x8B87" />
+      <token name="ACTIVE_UNIFORMS" value="0x8B86" />
+      <token name="ATTACHED_SHADERS" value="0x8B85" />
       <token name="CURRENT_PROGRAM" value="0x8B8D" />
+      <token name="DELETE_STATUS" value="0x8B80" />
+      <token name="FRAGMENT_SHADER" value="0x8B30" />
+      <token name="LINK_STATUS" value="0x8B82" />
+      <token name="MAX_COMBINED_TEXTURE_IMAGE_UNITS" value="0x8B4D" />
+      <token name="MAX_FRAGMENT_UNIFORM_VECTORS" value="0x8DFD" />
+      <token name="MAX_TEXTURE_IMAGE_UNITS" value="0x8872" />
+      <token name="MAX_VARYING_VECTORS" value="0x8DFC" />
+      <token name="MAX_VERTEX_ATTRIBS" value="0x8869" />
+      <token name="MAX_VERTEX_TEXTURE_IMAGE_UNITS" value="0x8B4C" />
+      <token name="MAX_VERTEX_UNIFORM_VECTORS" value="0x8DFB" />
+      <token name="SHADER_TYPE" value="0x8B4F" />
+      <token name="SHADING_LANGUAGE_VERSION" value="0x8B8C" />
+      <token name="VALIDATE_STATUS" value="0x8B83" />
+      <token name="VERTEX_SHADER" value="0x8B31" />
     </enum>
     <enum name="SRC_ALPHA" type="int">
-      <token name="FUNC_ADD" value="0x8006" />
       <token name="BLEND_EQUATION" value="0x8009" />
       <token name="BLEND_EQUATION_RGB" value="0x8009" />
+      <token name="FUNC_ADD" value="0x8006" />
     </enum>
     <enum name="StencilFunction" type="int">
-      <token name="NEVER" value="0x0200" />
-      <token name="LESS" value="0x0201" />
-      <token name="EQUAL" value="0x0202" />
-      <token name="LEQUAL" value="0x0203" />
-      <token name="GREATER" value="0x0204" />
-      <token name="NOTEQUAL" value="0x0205" />
-      <token name="GEQUAL" value="0x0206" />
       <token name="ALWAYS" value="0x0207" />
+      <token name="EQUAL" value="0x0202" />
+      <token name="GEQUAL" value="0x0206" />
+      <token name="GREATER" value="0x0204" />
+      <token name="LEQUAL" value="0x0203" />
+      <token name="LESS" value="0x0201" />
+      <token name="NEVER" value="0x0200" />
+      <token name="NOTEQUAL" value="0x0205" />
     </enum>
     <enum name="StencilOp" type="int">
+      <token name="DECR" value="0x1E03" />
+      <token name="DECR_WRAP" value="0x8508" />
+      <token name="INCR" value="0x1E02" />
+      <token name="INCR_WRAP" value="0x8507" />
+      <token name="INVERT" value="0x150A" />
       <token name="KEEP" value="0x1E00" />
       <token name="REPLACE" value="0x1E01" />
-      <token name="INCR" value="0x1E02" />
-      <token name="DECR" value="0x1E03" />
-      <token name="INVERT" value="0x150A" />
-      <token name="INCR_WRAP" value="0x8507" />
-      <token name="DECR_WRAP" value="0x8508" />
     </enum>
     <enum name="StringName" type="int">
-      <token name="VENDOR" value="0x1F00" />
       <token name="RENDERER" value="0x1F01" />
+      <token name="VENDOR" value="0x1F00" />
       <token name="VERSION" value="0x1F02" />
     </enum>
     <enum name="TextureMagFilter" type="int">
-      <token name="NEAREST" value="0x2600" />
       <token name="LINEAR" value="0x2601" />
+      <token name="NEAREST" value="0x2600" />
     </enum>
     <enum name="TextureMinFilter" type="int">
-      <token name="NEAREST_MIPMAP_NEAREST" value="0x2700" />
+      <token name="LINEAR_MIPMAP_LINEAR" value="0x2703" />
       <token name="LINEAR_MIPMAP_NEAREST" value="0x2701" />
       <token name="NEAREST_MIPMAP_LINEAR" value="0x2702" />
-      <token name="LINEAR_MIPMAP_LINEAR" value="0x2703" />
+      <token name="NEAREST_MIPMAP_NEAREST" value="0x2700" />
     </enum>
     <enum name="TextureParameterName" type="int">
       <token name="TEXTURE_MAG_FILTER" value="0x2800" />
@@ -292,28 +292,21 @@
       <token name="TEXTURE_WRAP_T" value="0x2803" />
     </enum>
     <enum name="TextureTarget" type="int">
-      <token name="TEXTURE" value="0x1702" />
-      <token name="TEXTURE_CUBE_MAP" value="0x8513" />
-      <token name="TEXTURE_BINDING_CUBE_MAP" value="0x8514" />
-      <token name="TEXTURE_CUBE_MAP_POSITIVE_X" value="0x8515" />
-      <token name="TEXTURE_CUBE_MAP_NEGATIVE_X" value="0x8516" />
-      <token name="TEXTURE_CUBE_MAP_POSITIVE_Y" value="0x8517" />
-      <token name="TEXTURE_CUBE_MAP_NEGATIVE_Y" value="0x8518" />
-      <token name="TEXTURE_CUBE_MAP_POSITIVE_Z" value="0x8519" />
-      <token name="TEXTURE_CUBE_MAP_NEGATIVE_Z" value="0x851A" />
       <token name="MAX_CUBE_MAP_TEXTURE_SIZE" value="0x851C" />
+      <token name="TEXTURE" value="0x1702" />
+      <token name="TEXTURE_BINDING_CUBE_MAP" value="0x8514" />
+      <token name="TEXTURE_CUBE_MAP" value="0x8513" />
+      <token name="TEXTURE_CUBE_MAP_NEGATIVE_X" value="0x8516" />
+      <token name="TEXTURE_CUBE_MAP_NEGATIVE_Y" value="0x8518" />
+      <token name="TEXTURE_CUBE_MAP_NEGATIVE_Z" value="0x851A" />
+      <token name="TEXTURE_CUBE_MAP_POSITIVE_X" value="0x8515" />
+      <token name="TEXTURE_CUBE_MAP_POSITIVE_Y" value="0x8517" />
+      <token name="TEXTURE_CUBE_MAP_POSITIVE_Z" value="0x8519" />
     </enum>
     <enum name="TextureUnit" type="int">
+      <token name="ACTIVE_TEXTURE" value="0x84E0" />
       <token name="TEXTURE0" value="0x84C0" />
       <token name="TEXTURE1" value="0x84C1" />
-      <token name="TEXTURE2" value="0x84C2" />
-      <token name="TEXTURE3" value="0x84C3" />
-      <token name="TEXTURE4" value="0x84C4" />
-      <token name="TEXTURE5" value="0x84C5" />
-      <token name="TEXTURE6" value="0x84C6" />
-      <token name="TEXTURE7" value="0x84C7" />
-      <token name="TEXTURE8" value="0x84C8" />
-      <token name="TEXTURE9" value="0x84C9" />
       <token name="TEXTURE10" value="0x84CA" />
       <token name="TEXTURE11" value="0x84CB" />
       <token name="TEXTURE12" value="0x84CC" />
@@ -324,6 +317,7 @@
       <token name="TEXTURE17" value="0x84D1" />
       <token name="TEXTURE18" value="0x84D2" />
       <token name="TEXTURE19" value="0x84D3" />
+      <token name="TEXTURE2" value="0x84C2" />
       <token name="TEXTURE20" value="0x84D4" />
       <token name="TEXTURE21" value="0x84D5" />
       <token name="TEXTURE22" value="0x84D6" />
@@ -334,22 +328,22 @@
       <token name="TEXTURE27" value="0x84DB" />
       <token name="TEXTURE28" value="0x84DC" />
       <token name="TEXTURE29" value="0x84DD" />
+      <token name="TEXTURE3" value="0x84C3" />
       <token name="TEXTURE30" value="0x84DE" />
       <token name="TEXTURE31" value="0x84DF" />
-      <token name="ACTIVE_TEXTURE" value="0x84E0" />
+      <token name="TEXTURE4" value="0x84C4" />
+      <token name="TEXTURE5" value="0x84C5" />
+      <token name="TEXTURE6" value="0x84C6" />
+      <token name="TEXTURE7" value="0x84C7" />
+      <token name="TEXTURE8" value="0x84C8" />
+      <token name="TEXTURE9" value="0x84C9" />
     </enum>
     <enum name="TextureWrapMode" type="int">
-      <token name="REPEAT" value="0x2901" />
       <token name="CLAMP_TO_EDGE" value="0x812F" />
       <token name="MIRRORED_REPEAT" value="0x8370" />
+      <token name="REPEAT" value="0x2901" />
     </enum>
-    <enum name="Uniform Types" type="int">
-      <token name="FLOAT_VEC2" value="0x8B50" />
-      <token name="FLOAT_VEC3" value="0x8B51" />
-      <token name="FLOAT_VEC4" value="0x8B52" />
-      <token name="INT_VEC2" value="0x8B53" />
-      <token name="INT_VEC3" value="0x8B54" />
-      <token name="INT_VEC4" value="0x8B55" />
+    <enum name="UniformTypes" type="int">
       <token name="BOOL" value="0x8B56" />
       <token name="BOOL_VEC2" value="0x8B57" />
       <token name="BOOL_VEC3" value="0x8B58" />
@@ -357,24 +351,30 @@
       <token name="FLOAT_MAT2" value="0x8B5A" />
       <token name="FLOAT_MAT3" value="0x8B5B" />
       <token name="FLOAT_MAT4" value="0x8B5C" />
+      <token name="FLOAT_VEC2" value="0x8B50" />
+      <token name="FLOAT_VEC3" value="0x8B51" />
+      <token name="FLOAT_VEC4" value="0x8B52" />
+      <token name="INT_VEC2" value="0x8B53" />
+      <token name="INT_VEC3" value="0x8B54" />
+      <token name="INT_VEC4" value="0x8B55" />
       <token name="SAMPLER_2D" value="0x8B5E" />
       <token name="SAMPLER_CUBE" value="0x8B60" />
     </enum>
-    <enum name="Vertex Arrays" type="int">
+    <enum name="VertexArrays" type="int">
+      <token name="VERTEX_ATTRIB_ARRAY_BUFFER_BINDING" value="0x889F" />
       <token name="VERTEX_ATTRIB_ARRAY_ENABLED" value="0x8622" />
+      <token name="VERTEX_ATTRIB_ARRAY_NORMALIZED" value="0x886A" />
+      <token name="VERTEX_ATTRIB_ARRAY_POINTER" value="0x8645" />
       <token name="VERTEX_ATTRIB_ARRAY_SIZE" value="0x8623" />
       <token name="VERTEX_ATTRIB_ARRAY_STRIDE" value="0x8624" />
       <token name="VERTEX_ATTRIB_ARRAY_TYPE" value="0x8625" />
-      <token name="VERTEX_ATTRIB_ARRAY_NORMALIZED" value="0x886A" />
-      <token name="VERTEX_ATTRIB_ARRAY_POINTER" value="0x8645" />
-      <token name="VERTEX_ATTRIB_ARRAY_BUFFER_BINDING" value="0x889F" />
     </enum>
-    <enum name="WebGL-specific enums" type="int">
-      <token name="UNPACK_FLIP_Y_WEBGL" value="0x9240" />
-      <token name="UNPACK_PREMULTIPLY_ALPHA_WEBGL" value="0x9241" />
+    <enum name="WebGLspecificenums" type="int">
+      <token name="BROWSER_DEFAULT_WEBGL" value="0x9244" />
       <token name="CONTEXT_LOST_WEBGL" value="0x9242" />
       <token name="UNPACK_COLORSPACE_CONVERSION_WEBGL" value="0x9243" />
-      <token name="BROWSER_DEFAULT_WEBGL" value="0x9244" />
+      <token name="UNPACK_FLIP_Y_WEBGL" value="0x9240" />
+      <token name="UNPACK_PREMULTIPLY_ALPHA_WEBGL" value="0x9241" />
     </enum>
     <function name="ActiveTexture" extension="Core" profile="" category="2.0" version="2.0">
       <returns type="void" />
