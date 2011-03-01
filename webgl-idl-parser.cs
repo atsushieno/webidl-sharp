@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml.Serialization;
 using Irony.Parsing;
 
 using Argument = System.Collections.Generic.KeyValuePair<string,string>;
@@ -51,13 +52,13 @@ namespace WebIDLSharp
 				Console.WriteLine ("<signatures>");
 				Console.WriteLine ("  <add>");
 				foreach (var p in from e in enums orderby e.Key select e) {
-					Console.WriteLine ("    <enum name='{0}' type='int'>", p.Key);
+					Console.WriteLine ("    <enum name='{0}' type='int'>".Replace ('\'', '"'), p.Key);
 					foreach (var t in p.Value)
-						Console.WriteLine ("      <token name='{0}' value='{1}' />", t.Key, t.Value);
+						Console.WriteLine ("      <token name='{0}' value='{1}' />".Replace ('\'', '"'), t.Key, t.Value);
 					Console.WriteLine ("    </enum>");
 				}
 				foreach (var f in from x in functions orderby x.Name select x)
-					Console.WriteLine (f);
+					Console.Write (f);
 				Console.WriteLine ("  </add>");
 				Console.WriteLine ("</signatures>");
 			}
@@ -90,7 +91,7 @@ namespace WebIDLSharp
 		string current_enum_category;
 		Dictionary<string,string> enum_categories = new Dictionary<string,string> ();
 		List<Function> functions = new List<Function> ();
-		Regex frex = new Regex (@"(\w+)\s(\w+)\s*\((.*)\s*\)\s*;");
+		Regex frex = new Regex (@"([\w\[\]]+)\s(\w+)\s*\((.*)\s*\)\s*;");
 		Regex erex = new Regex (@"const GLenum (\w+)\s*=\s* (\w+);");
 		Dictionary<string,List<Enum>> enums = new Dictionary<string,List<Enum>> ();
 
@@ -106,7 +107,6 @@ namespace WebIDLSharp
 				current_enum_category = cat;
 			}
 			enum_categories [(string) node.ChildNodes [3].AstNode] = current_enum_category;
-
 
 			var def = src.Substring (node.Span.Location.Position, node.Span.Length).Replace ("\r\n", "\n");
 			var m = erex.Match (def);
@@ -124,10 +124,10 @@ namespace WebIDLSharp
 			public override string ToString ()
 			{
 				var sw = new StringWriter ();
-				sw.WriteLine ("    <function name='{0}' extension='Core' category='2.0' version='2.0'>", Name);
-				sw.WriteLine ("      <returns type='{0}' />", ReturnType);
+				sw.WriteLine ("    <function name='{0}' extension='Core' profile='' category='2.0' version='2.0'>".Replace ('\'', '"'), CodeIdentifier.MakePascal (Name));
+				sw.WriteLine ("      <returns type='{0}' />".Replace ('\'', '"'), ReturnType);
 				foreach (var p in Arguments)
-					sw.WriteLine ("      <param type='{0}' name='{1}' flow='in' />", p.Key, p.Value);
+					sw.WriteLine ("      <param type='{0}' name='{1}' flow='in' />".Replace ('\'', '"'), p.Key.Replace ("<", "&lt;").Replace (">", "&gt;"), p.Value);
 				sw.WriteLine ("    </function>");
 				return sw.ToString ();
 			}
@@ -137,6 +137,7 @@ namespace WebIDLSharp
 		{
 			var def = src.Substring (node.Span.Location.Position, node.Span.Length).Replace ("\r\n", "\n");
 			def = String.Join ("", (from s in def.Split ('\n') select s.Trim ()).ToArray ());
+			def = def.Replace ("[ ]", "[]"); // hack!
 			var m = frex.Match (def);
 
 			var f = new Function () { ReturnType = m.Groups [1].ToString (), Name = m.Groups [2].ToString () };
@@ -190,8 +191,8 @@ namespace WebIDLSharp
 		{
 			foreach (var cn in node.ChildNodes)
 				cn.Term.CreateAstNode (context, cn);
-Console.WriteLine ("Children: {0} Token {1}", node.ChildNodes.Count, node.Token);
-foreach (var cn in node.ChildNodes) Console.WriteLine ("-> " + cn.AstNode);
+//Console.WriteLine ("Children: {0} Token {1}", node.ChildNodes.Count, node.Token);
+//foreach (var cn in node.ChildNodes) Console.WriteLine ("-> " + cn.AstNode);
 		}
 
 		static void CreateIdentifierNode (ParsingContext context, ParseTreeNode node)
