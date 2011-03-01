@@ -25,13 +25,8 @@ namespace WebIDLSharp
 		void Run (string [] args)
 		{
 			var dic = new Dictionary<string,AstNodeCreator> ();
-			dic ["DelimitedComment"] = CreateCommentNode;
-			dic ["Identifier"] = CreateIdentifierNode;
-//			dic ["ReturnType"] = CreateReturnTypeNode;
-			dic ["Interface"] = CreateInterfaceNode;
 			dic ["Const"] = CreateConstNode;
 			dic ["Operation"] = CreateOperationNode;
-			dic ["OperationRest"] = CreateOperationRestNode;
 			dic ["*"] = NotImplemented;
 
 			var grammar = new WebGLWebIDLGrammar (dic);
@@ -47,8 +42,6 @@ namespace WebIDLSharp
 
 				grammar.CreateAstNode (parser.Context, pt.Root);
 
-				//foreach (var p in enum_categories)
-				//	Console.WriteLine ("[enum] {0}: {1}", p.Value, p.Key);
 				Console.WriteLine ("<signatures>");
 				Console.WriteLine ("  <add>");
 				foreach (var p in from e in enums orderby e.Key select e) {
@@ -66,13 +59,11 @@ namespace WebIDLSharp
 
 		void NotImplemented (ParsingContext ctx, ParseTreeNode node)
 		{
-//Console.WriteLine ("Node {0} has {1} children", node.Term.Name, node.ChildNodes.Count);
 			foreach (var cn in node.ChildNodes)
 				cn.Term.CreateAstNode (ctx, cn);
 
-//Console.WriteLine (node.Term.Name + " :: " + node.Token + " // " + node.ChildNodes.Count);
 			if (node.Token != null)
-				node.AstNode = node.Token.Value ?? node.Term.Name;
+				node.AstNode = node.Token.Value;
 			else {
 				if (node.ChildNodes.Any (cn => cn.AstNode != null))
 					node.AstNode = (from cn in node.ChildNodes select cn.AstNode).ToArray ();
@@ -88,11 +79,10 @@ namespace WebIDLSharp
 				cn.Term.CreateAstNode (context, cn);
 		}
 
-		string current_enum_category;
-		Dictionary<string,string> enum_categories = new Dictionary<string,string> ();
-		List<Function> functions = new List<Function> ();
 		Regex frex = new Regex (@"([\w\[\]]+)\s(\w+)\s*\((.*)\s*\)\s*;");
 		Regex erex = new Regex (@"const GLenum (\w+)\s*=\s* (\w+);");
+		string current_enum_category;
+		List<Function> functions = new List<Function> ();
 		Dictionary<string,List<Enum>> enums = new Dictionary<string,List<Enum>> ();
 
 		void CreateConstNode (ParsingContext context, ParseTreeNode node)
@@ -106,7 +96,6 @@ namespace WebIDLSharp
 				cat = cat.Substring (2).Substring (0, cat.Length - 4).Trim (); // trim /* and */
 				current_enum_category = cat;
 			}
-			enum_categories [(string) node.ChildNodes [3].AstNode] = current_enum_category;
 
 			var def = src.Substring (node.Span.Location.Position, node.Span.Length).Replace ("\r\n", "\n");
 			var m = erex.Match (def);
@@ -149,60 +138,6 @@ namespace WebIDLSharp
 			}
 			
 			functions.Add (f);
-
-			/*
-			current_enum_category = null;
-			foreach (var cn in node.ChildNodes)
-				cn.Term.CreateAstNode (context, cn);
-
-			var q = node.GetNullable<object> (0);
-			if (q != null)
-				throw new Exception (String.Format ("In operation {0}, qualifiers not supported: {1}", node.ChildNodes [1].ChildNodes [1].AstNode, q));
-//Console.WriteLine (String.Join (" ", (from cn in node.ChildNodes where cn.AstNode != null select cn.Term.Name + ":" + cn.AstNode.ToString ()).ToArray ()));
-			*/
-		}
-
-		class OperationRest
-		{
-			public object ReturnType;
-			public object Name;
-			public object Arguments;
-			public object Raises;
-			
-			public override string ToString ()
-			{
-				return String.Format ("{0} {1} ({2}) {3} {4}", ReturnType, Name, Arguments, Raises != null ? "raises" : null, Raises);
-			}
-		}
-
-		void CreateOperationRestNode (ParsingContext context, ParseTreeNode node)
-		{
-			foreach (var cn in node.ChildNodes)
-				cn.Term.CreateAstNode (context, cn);
-			var or = new OperationRest () {
-				ReturnType = node.GetNullable<object> (0),
-				Name = node.GetNullable<object> (1),
-				Arguments = node.GetNullable<object> (3),
-				Raises = node.GetNullable<object> (5) };
-			node.AstNode = or;
-		}
-
-		static void CreateReturnTypeNode (ParsingContext context, ParseTreeNode node)
-		{
-			foreach (var cn in node.ChildNodes)
-				cn.Term.CreateAstNode (context, cn);
-//Console.WriteLine ("Children: {0} Token {1}", node.ChildNodes.Count, node.Token);
-//foreach (var cn in node.ChildNodes) Console.WriteLine ("-> " + cn.AstNode);
-		}
-
-		static void CreateIdentifierNode (ParsingContext context, ParseTreeNode node)
-		{
-			node.AstNode = node.Token.Value;
-		}
-
-		void CreateCommentNode (ParsingContext context, ParseTreeNode node)
-		{
-			node.AstNode = node.Token.Value;
 		}
 	}
 
